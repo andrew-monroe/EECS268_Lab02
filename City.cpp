@@ -116,7 +116,6 @@ void City::incrementInfectionLevel()
 {
     std::cout << "Infection Level of " << m_name << " upgraded from " <<
         m_infectionLevel << " to " << m_infectionLevel+1 << "." << std::endl;
-    std::cout << std::endl;
 
     m_infectionLevel++;
 }

@@ -244,14 +244,10 @@ void MedicalExecutive::increaseInfectionOfAll()
 
     tempLength = m_cities->getLength();
 
-    std::cout << "tempLength: " << tempLength << std::endl;
-
     for (int x = 1; x <= tempLength; x++)
     {
-        std::cout << "x: " << x << std::endl;
         changedCity = m_cities->getEntry(1);
 
-        std::cout << "Incrementing " << changedCity.getName() << std::endl;
         changedCity.incrementInfectionLevel();
 
         if (changedCity.getInfectionLevel() == 1)
@@ -436,7 +432,7 @@ void MedicalExecutive::showCitiesWithInfectionLevel()
     std::cout << "Enter an infection level: ";
     std::cin >> level;
     std::cout << std::endl;
-    while ( std::cin.fail() )
+    while ( std::cin.fail() || level < 0)
     {
         std::cin.clear();
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
