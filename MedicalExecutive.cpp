@@ -211,11 +211,19 @@ void MedicalExecutive::addCity(City newCity)
         {
             m_cities->addBack(newCity);
         }
-        else if(newCity >= m_cities->getEntry(y))
+        else if(newCity > m_cities->getEntry(y))
         {
             m_cities->insert(y, newCity);
         }
+        else if(newCity == m_cities->getEntry(y))
+        {
+            else if(newCity.getName().c_str() >= m_cities->getEntry(y).getName().c_str())
+            {
+                m_cities->insert(y, newCity);
+            }
 
+            m_cities->insert(y, newCity);
+        }
     }
 }
 
@@ -237,11 +245,19 @@ void MedicalExecutive::addTempCity(City newCity)
         {
             m_tempCities->addBack(newCity);
         }
-        else if(newCity >= m_tempCities->getEntry(y))
+        else if(newCity > m_tempCities->getEntry(y))
         {
             m_tempCities->insert(y, newCity);
         }
+        else if(newCity == m_tempCities->getEntry(y))
+        {
+            else if(newCity.getName().c_str() >= m_tempCities->getEntry(y).getName().c_str())
+            {
+                m_tempCities->insert(y, newCity);
+            }
 
+            m_tempCities->insert(y, newCity);
+        }
     }
 }
 
@@ -267,7 +283,15 @@ void MedicalExecutive::addQuarentine(City newCity)
         {
             m_quarentine->insert(y, newCity);
         }
+        else if(newCity == m_quarentine->getEntry(y))
+        {
+            else if(newCity.getName().c_str() >= m_quarentine->getEntry(y).getName().c_str())
+            {
+                m_quarentine->insert(y, newCity);
+            }
 
+            m_quarentine->insert(y, newCity);
+        }
     }
 }
 
@@ -366,7 +390,6 @@ void MedicalExecutive::increaseInfectionOfOne(std::string cityName)
     City newCity;
     changedCity.setName(cityName);
     int x = m_cities->positionOf(changedCity); //position of given city
-    int tempLength = m_cities->getLength(); //length of m_cities
 
     //check to make sure city exists and is not in quarentine
     if (x == 0)
