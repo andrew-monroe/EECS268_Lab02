@@ -1,4 +1,5 @@
-3
+4
 Lawrence, 85483, 2
 Kansas City, 1500000, 3
+Wichita, 12345, 1
 Smallville, 23, 0
