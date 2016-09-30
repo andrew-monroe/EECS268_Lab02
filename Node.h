@@ -13,30 +13,31 @@ template <typename T>
 class Node
 {
     public:
-        /*
-            Node constructor used when creating a new node
-        */
+        /** @pre None.
+    	*   @post m_item equals item, m_nextNode equals nullptr.
+    	*/
         Node(T item);
 
-        /*
-            return a reference to the next node
-        */
+        /** @pre None.
+    	*   @post None.
+    	*   @return value of m_nextNode, even if it is nullptr
+    	*/
         Node<T>* getNextNode() const;
 
-        /*
-            set the next node pointer to point at a new node containing a
-            specified value
-        */
+        /** @pre None.
+    	*   @post m_nextNode now points to value.s
+    	*/
         void setNextNode(Node<T>* value);
 
-        /*
-            return the item contained within the node
-        */
+        /** @pre None.
+    	*   @post None.
+    	*   @return value of m_item
+    	*/
         T getItem() const;
 
-        /*
-            set the item contained in the node to be a new item
-        */
+        /** @pre None.
+    	*   @post m_item equals item.
+    	*/
         void setItem(T item);
 
     private:

@@ -1,8 +1,12 @@
 /**
 *	@file MedicalExecutive.h
 *	@author Andy Monroe
-*	@date 09-13-2016
-*	@brief asfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf
+*	@date 09-29-2016
+*	@brief Header file for MedicalExecutive class. MedicalExecutive takes an
+        input file to build a list of infected cities. MedicalExecutive prompts
+        the user for various actions to take regarding this linked list of
+        cities, and contains the code necessary to perform those actions using
+        linked list of City values and their operations.
 */
 
 #include <iostream>
@@ -17,21 +21,19 @@
 class MedicalExecutive
 {
     public:
-
-        /*
-            initalize the m_name variable to be the user given file name
-            initialize m_cities to a null pointer
-        */
+        /** @pre None.
+    	*   @post Three empty lists created and file name is recorded.
+    	*/
         MedicalExecutive(std::string fileName);
 
-        /*
-            delete the m_cities heap-allocated variable
-        */
+        /** @pre All three list pointers are allocated.
+    	*   @post All three lists are deallocated.
+    	*/
         ~MedicalExecutive();
 
-        /*
-            toplevel pattern of how the program is supposed to function
-        */
+        /** @pre m_cities, m_tempCities, and m_quarentine are allocated.
+    	*   @post Program is finished running.
+    	*/
         void run();
 
     private:
@@ -40,57 +42,60 @@ class MedicalExecutive
         LinkedList<City>* m_quarentine;
         LinkedList<City>* m_tempCities;
 
-        /*
-            read in the information from the provided text file and put into a
-            linked list
-            return false if no file with the user-specified name exists
-        */
+        /** @pre fileName contains the name of the input file.
+    	*   @post The city and quarentine lists are filled with data from the
+                input file.
+            @return true if file was read successfully, false otherwise.
+    	*/
         bool readFile();
 
-        /*
-            display menu and return user's integer choice
-        */
+        /** @pre None.
+    	*   @post None.
+    	*   @return user's choice.
+    	*/
         int menu();
 
-        /*
-            take in a City value and sort it into m_cities LinkedList
-        */
+        /** @pre m_cities is allocated.
+    	*   @post one more city is in m_cities.
+    	*/
         void addCity(City newCity);
 
-        /*
-            take in a City value and sort it into m_tempCities LinkedList
-        */
+        /** @pre m_tempCities is allocated.
+    	*   @post one more city is in m_tempCities.
+    	*/
         void addTempCity(City newCity);
 
-        /*
-            take in a City value and sort it into m_quarentine LinkedList
-        */
+        /** @pre m_quarentine is allocated.
+    	*   @post one more city is in m_quarentine.
+    	*/
         void addQuarentine(City newCity);
 
-        /*
-            increase the infection level by 1 for all cities in m_cities
-        */
+        /** @pre m_cities, m_tempCities, and m_quarentine are allocated.
+    	*   @post all cities in m_cities have had infection level raised by 1.
+    	*/
         void increaseInfectionOfAll();
 
-        /*
-            increase the infection level by 1 for a city with a specified name
-        */
+        /** @pre m_cities and m_quarentine are allocated and a city with name
+                cityName exists.
+    	*   @post The city with name cityName has had infection level raised by
+                1.
+    	*/
         void increaseInfectionOfOne(std::string cityName);
 
-        /*
-            output the status (population and infection level) for a city with a
-                specified name
-        */
+        /** @pre m_cities and m_quarentine are allocated.
+    	*   @post None.
+    	*/
         void showCityStatus(std::string cityName);
 
-        /*
-            output city information from the linked list into an output file
-        */
+        /** @pre m_quarentine is allocated.
+    	*   @post QuarentineLog.txt is created and filled with information of
+                all cities in m_quarentine.
+    	*/
         void createQuarentineLog();
 
-        /*
-            output a list of cities that match a certain infection level
-        */
+        /** @pre m_cities and m_quarentine are allocated.
+    	*   @post None.
+    	*/
         void showCitiesWithInfectionLevel();
 };
 

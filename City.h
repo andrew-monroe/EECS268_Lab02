@@ -17,64 +17,70 @@
 class City
 {
     public:
-        /*
-            initializes member variables to default values
-        */
+        /** @pre None.
+    	*   @post Member variables intitialized.
+    	*/
         City();
 
-        /*
-            overloads the == operator to work with City class variables
-            returns true if two cities have the same name
-        */
+        /** @pre None.
+    	*   @post None.
+    	*   @return true if the cities have the same name.
+    	*/
         bool operator== (City c) const;
 
-        /*
-            overloads the >= operator to work with City class variables
-            returns true if the left side city has greater or equal population
-            compared to the right side city
-        */
+        /** @pre None.
+    	*   @post None.
+    	*   @return true if population of left side city is greater or equal to
+                population of right side city.
+    	*/
         bool operator>= (City c) const;
 
-        /*
-            overloads the <= operator to work with City class variables
-            returns true if the left side city has lesser or equal population compared
-            to the right side city
-        */
+        /** @pre None.
+    	*   @post None.
+    	*   @return true if population of left side city is lesser or equal to
+                population of right side city.
+    	*/
         bool operator<= (City c) const;
 
-        /*
-            returns the name of the city
-        */
+        /** @pre None.
+    	*   @post None.
+    	*   @return m_name of the city.
+    	*/
         std::string getName() const;
 
-        /*
-            sets the name of the city to a specified string
-        */
+        /** @pre None.
+    	*   @post Sets m_name of the city to newName.
+    	*/
         void setName(std::string newName);
 
-        /*
-            returns the population number
-        */
+        /** @pre None.
+    	*   @post None.
+    	*   @return m_population of the city.
+    	*/
         int getPopulation() const;
 
-        /*
-            sets the population value to a specified integer
-        */
+        /** @pre None.
+    	*   @post Sets m_population of the city to pop.
+    	*/
         void setPopulation(int pop);
 
-        /*
-            returns the infection level of the city
-        */
+        /** @pre None.
+    	*   @post None.
+    	*   @return m_infectionLevel of the city.
+    	*/
         int getInfectionLevel() const;
 
         /*
             sets the infection level of the city to a specified integer
         */
+        /** @pre None.
+    	*   @post Sets the m_infectionLevel of the city to level.
+    	*/
         void setInfectionLevel(int level);
 
-        /*
-            increases the city's infection level by 1
-        */
+        /** @pre None.
+    	*   @post m_infectionLevel of the city raised by 1.
+    	*/
         void incrementInfectionLevel();
 
     private:
