@@ -443,7 +443,7 @@ void MedicalExecutive::showCitiesWithInfectionLevel()
         std::cout << "Bad input. Try again." << std::endl << std::endl;
         std::cout << "Enter an infection level: ";
         std::cin >> level;
-        std::cout << std::endl
+        std::cout << std::endl;
     }
 
     if(level > 4)
