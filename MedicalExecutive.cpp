@@ -9,6 +9,7 @@
         using linked list of City values and their operations.
 */
 
+#include <limits>
 #include "MedicalExecutive.h"
 
 /*
@@ -140,9 +141,13 @@ bool MedicalExecutive::readFile()
     {
         std::cout << "No file named \"" << m_name << "\" was found." <<
             std::endl;
+        
+        delete newCity;
 
         return(false);
     }
+    
+    delete newCity;
 
     //input file was successfully read from
     return(true);
@@ -640,5 +645,12 @@ void MedicalExecutive::showCitiesWithInfectionLevel()
                 noneFound = false;
             }
         }
+    }
+    
+    if (noneFound)
+    {
+        std::cout << std::endl;
+        std::cout << "No cities found with infection level greater than or equal to "
+            << level << std::endl;
     }
 }
