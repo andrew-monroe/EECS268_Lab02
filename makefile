@@ -11,4 +11,4 @@ City.o: City.h City.cpp
 	g++ -std=c++11 -g -Wall -c City.cpp
 
 clean:
-	rm *.o Lab02
+	rm *.o QuarentineLog.txt Lab02
