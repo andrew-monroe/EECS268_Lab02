@@ -1,28 +1,19 @@
 /**
 *	@file Node.cpp
 *	@author Andy Monroe
-*	@date 09-13-2016
-*	@brief aasdfasdfasdfasdfasdfasdfasdfasdfasdf
+*	@date 09-29-2016
+*	@brief Implementation file for templated class Node. Node contains an
+        object and a pointer to another Node.
 */
 
 /*
-    Node constructor used when creating a new last node
+    Node constructor used when creating a new node
 */
 template <typename T>
 Node<T>::Node(T item)
 {
     m_item = item;
     m_nextNode = nullptr;
-}
-
-/*
-    Node constructor used when creating a new non-last node
-*/
-template <typename T>
-Node<T>::Node(T item, Node<T> next)
-{
-    m_item = item;
-    m_nextNode = next;
 }
 
 /*

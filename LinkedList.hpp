@@ -1,8 +1,11 @@
 /**
 *	@file LinkedList.hpp
 *	@author Andy Monroe
-*	@date 09-13-2016
-*	@brief A header file for templated LinkedList class
+*	@date 09-29-2016
+*	@brief Implementation file for templated class LinkedList. LinkedList
+        contains a series of Node values. LinkedList knows where the first Node
+        is and how many Nodes there are, and uses this information in various
+        methods to perform LinkedList various operations.
 */
 
 /** @pre None.

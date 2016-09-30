@@ -2,7 +2,10 @@
 *	@file City.cpp
 *	@author Andy Monroe
 *	@date 09-29-2016
-*	@brief asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf
+*	@brief Implementation file for City class, including methods for various
+        operations that can be performed on City and three overloaded operators.
+        City classes have a string name value, an integer population value, and
+        an integer infection value.
 */
 #include "City.h"
 
@@ -15,7 +18,6 @@ City::City()
     m_population = 0;
     m_infectionLevel = 0;
 }
-
 
 /*
     overloads the == operator to work with City class variables
@@ -32,9 +34,9 @@ bool City::operator== (City c) const
 }
 
 /*
-    overloads the > operator to work with City class variables
-    returns true if the left side city has greater population than the right
-        side city
+    overloads the >= operator to work with City class variables
+    returns true if the left side city has greater or equal population compared
+    to the right side city
 */
 bool City::operator>= (City c) const
 {
@@ -47,9 +49,9 @@ bool City::operator>= (City c) const
 }
 
 /*
-    overloads the < operator to work with City class variables
-    returns true if the left side city has lesser population than the right
-        side city
+    overloads the <= operator to work with City class variables
+    returns true if the left side city has lesser or equal population compared
+    to the right side city
 */
 bool City::operator<= (City c) const
 {
