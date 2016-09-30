@@ -30,20 +30,6 @@ class City
 
         /** @pre None.
     	*   @post None.
-    	*   @return true if population of left side city is greater or equal to
-                population of right side city.
-    	*/
-        bool operator>= (City c) const;
-
-        /** @pre None.
-    	*   @post None.
-    	*   @return true if population of left side city is lesser or equal to
-                population of right side city.
-    	*/
-        bool operator<= (City c) const;
-
-        /** @pre None.
-    	*   @post None.
     	*   @return m_name of the city.
     	*/
         std::string getName() const;

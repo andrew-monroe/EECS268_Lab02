@@ -34,36 +34,6 @@ bool City::operator== (City c) const
 }
 
 /*
-    overloads the >= operator to work with City class variables
-    returns true if the left side city has greater or equal population compared
-    to the right side city
-*/
-bool City::operator>= (City c) const
-{
-    if(m_population >= c.getPopulation())
-    {
-        return(true);
-    }
-
-    return(false);
-}
-
-/*
-    overloads the <= operator to work with City class variables
-    returns true if the left side city has lesser or equal population compared
-    to the right side city
-*/
-bool City::operator<= (City c) const
-{
-    if(m_population <= c.getPopulation())
-    {
-        return(true);
-    }
-
-    return(false);
-}
-
-/*
     returns the name of the city
 */
 std::string City::getName() const

@@ -199,6 +199,9 @@ int MedicalExecutive::menu()
 void MedicalExecutive::addCity(City newCity)
 {
     int length = m_cities->getLength();
+    int newPopulation = newCity.getPopulation();
+    int tempPopulation = 0;
+
 
     if(length == 0)
     {
@@ -207,22 +210,22 @@ void MedicalExecutive::addCity(City newCity)
 
     for (int y = 1; y <= length; y++)
     {
+        tempPopulation = m_cities->getEntry(y).getPopulation();
+
         if (y == length)
         {
             m_cities->addBack(newCity);
         }
-        else if(newCity > m_cities->getEntry(y))
+        else if(newPopulation > tempPopulation)
         {
             m_cities->insert(y, newCity);
         }
-        else if(newCity == m_cities->getEntry(y))
+        else if(newPopulation == tempPopulation)
         {
-            else if(newCity.getName().c_str() >= m_cities->getEntry(y).getName().c_str())
+            if(newCity.getName().c_str() >= m_cities->getEntry(y).getName().c_str())
             {
                 m_cities->insert(y, newCity);
             }
-
-            m_cities->insert(y, newCity);
         }
     }
 }
@@ -233,6 +236,8 @@ void MedicalExecutive::addCity(City newCity)
 void MedicalExecutive::addTempCity(City newCity)
 {
     int length = m_tempCities->getLength();
+    int newPopulation = newCity.getPopulation();
+    int tempPopulation = 0;
 
     if(length == 0)
     {
@@ -241,22 +246,22 @@ void MedicalExecutive::addTempCity(City newCity)
 
     for (int y = 1; y <= length; y++)
     {
+        tempPopulation = m_tempCities->getEntry(y).getPopulation();
+
         if (y == length)
         {
             m_tempCities->addBack(newCity);
         }
-        else if(newCity > m_tempCities->getEntry(y))
+        else if(newPopulation > tempPopulation)
         {
             m_tempCities->insert(y, newCity);
         }
-        else if(newCity == m_tempCities->getEntry(y))
+        else if(newPopulation == tempPopulation)
         {
-            else if(newCity.getName().c_str() >= m_tempCities->getEntry(y).getName().c_str())
+            if(newCity.getName().c_str() >= m_tempCities->getEntry(y).getName().c_str())
             {
                 m_tempCities->insert(y, newCity);
             }
-
-            m_tempCities->insert(y, newCity);
         }
     }
 }
@@ -267,6 +272,8 @@ void MedicalExecutive::addTempCity(City newCity)
 void MedicalExecutive::addQuarentine(City newCity)
 {
     int length = m_quarentine->getLength();
+    int newPopulation = newCity.getPopulation();
+    int tempPopulation = 0;
 
     if(length == 0)
     {
@@ -275,22 +282,22 @@ void MedicalExecutive::addQuarentine(City newCity)
 
     for (int y = 1; y <= length; y++)
     {
+        tempPopulation = m_quarentine->getEntry(y).getPopulation();
+
         if (y == length)
         {
             m_quarentine->addBack(newCity);
         }
-        else if(newCity >= m_quarentine->getEntry(y))
+        else if(newPopulation >= tempPopulation)
         {
             m_quarentine->insert(y, newCity);
         }
-        else if(newCity == m_quarentine->getEntry(y))
+        else if(newPopulation == tempPopulation)
         {
-            else if(newCity.getName().c_str() >= m_quarentine->getEntry(y).getName().c_str())
+            if(newCity.getName().c_str() >= m_quarentine->getEntry(y).getName().c_str())
             {
                 m_quarentine->insert(y, newCity);
             }
-
-            m_quarentine->insert(y, newCity);
         }
     }
 }
@@ -588,7 +595,7 @@ void MedicalExecutive::showCitiesWithInfectionLevel()
         for(int x = 1; x <= size; x++)
         {
             //if city with specified infection level or higher is found
-            if(m_cities->getEntry(x).getInfectionLevel() >= level)
+            if(m_quarentine->getEntry(x).getInfectionLevel() >= level)
             {
                 //output the city's name
                 std::cout << m_quarentine->getEntry(x).getName() << std::endl;
@@ -624,7 +631,7 @@ void MedicalExecutive::showCitiesWithInfectionLevel()
         for(int x = 1; x <= size; x++)
         {
             //if city with specified infection level or higher is found
-            if(m_cities->getEntry(x).getInfectionLevel() >= level)
+            if(m_quarentine->getEntry(x).getInfectionLevel() >= level)
             {
                 //output the city's name
                 std::cout << m_quarentine->getEntry(x).getName() << std::endl;
